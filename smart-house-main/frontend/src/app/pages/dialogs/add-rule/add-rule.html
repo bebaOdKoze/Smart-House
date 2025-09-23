@@ -1,0 +1,45 @@
+<form class="p-fluid grid gap-4 w-full">
+    <p-iftalabel>
+        <input id="name" type="text" class="w-full" pInputText [(ngModel)]="rule.name" name="name" />
+        <label for="name">Rule name</label>
+    </p-iftalabel>
+
+    <p-iftalabel>
+        <p-select [(ngModel)]="rule.type" name="type" id="type" [options]="types" class="w-full" variant="filled">
+        </p-select>
+        <label for="type">Type</label>
+    </p-iftalabel>
+
+    <p-iftalabel>
+        <p-select [(ngModel)]="rule.status" name="status" id="status" [options]="statuses" class="w-full" variant="filled">
+        </p-select>
+        <label for="status">Status</label>
+    </p-iftalabel>
+
+    <p-iftalabel>
+        <p-select [(ngModel)]="rule.targetDevice" name="targetDevice" id="targetDevice" [options]="targetDevices" class="w-full" variant="filled" optionLabel="name">
+        </p-select>
+        <label for="targetDevice">Target device</label>
+    </p-iftalabel>
+
+    <p-iftalabel>
+        <p-select [(ngModel)]="rule.priority" name="priority" id="priority" [options]="priorities" class="w-full" variant="filled">
+        </p-select>
+        <label for="priority">Priority</label>
+    </p-iftalabel>
+
+    <p-iftalabel>
+        <input id="condition" type="text" class="w-full" pInputText [(ngModel)]="rule.condition" name="condition" />
+        <label for="condition">Condition</label>
+    </p-iftalabel>
+
+    <p-iftalabel>
+        <input id="action" type="text" class="w-full" pInputText [(ngModel)]="rule.action" name="action" />
+        <label for="action">Action</label>
+    </p-iftalabel>
+</form>
+
+<p-footer class="flex justify-center gap-2 mt-3">
+    <p-button label="Cancel" icon="pi pi-times" (onClick)="ref.close()" severity="secondary"></p-button>
+    <p-button label="Save" icon="pi pi-check" (onClick)="save()" severity="success"></p-button>
+</p-footer>

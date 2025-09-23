@@ -1,0 +1,41 @@
+<p-toast></p-toast>
+<div class="signin-wrapper">
+  <p-card styleClass="signin-card">
+    <ng-template pTemplate="header">
+      <h2 class="signin-title">
+        Sign in
+      </h2>
+    </ng-template>
+
+    <!-- Forma -->
+    <form [formGroup]="loginForm" (ngSubmit)="onSubmit()" class="p-fluid">
+      <div class="p-field">
+        <label for="username">Username</label>
+        <input 
+        pInputText id="username" formControlName="username" 
+        [ngClass]="{ 'p-invalid': isInvalid('username') }"
+          placeholder="your_username" />
+        <p *ngIf="isInvalid('username')" class="p-error">Valid username required.</p>
+      </div>
+
+      <div class="p-field">
+        <label for="password">Password</label>
+        <input pPassword id="password" formControlName="password" [feedback]="false"
+          [ngClass]="{ 'p-invalid': isInvalid('password') }" placeholder="Enter password" />
+        <p *ngIf="isInvalid('password')" class="p-error">Password is required.</p>
+      </div>
+
+      <button pButton type="submit" label="Sign in" class="signin-btn" severity="info"
+        [disabled]="loginForm.invalid"></button>
+    </form>
+
+    <div class="separator">or</div>
+
+    <button class="google-btn">
+      <img src="https://developers.google.com/identity/images/g-logo.png" alt="Google" />
+      <span>Sign in with Google</span>
+    </button>
+
+    
+  </p-card>
+</div>

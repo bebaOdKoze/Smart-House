@@ -1,0 +1,73 @@
+@import "primeicons/primeicons.css";
+@import "tailwindcss";
+:root {
+  --green-light: rgba(150, 240, 165, 0.511);
+  --gray: rgba(90, 88, 88, 0.867);
+}
+
+body {
+  margin: 0px !important;
+  padding: 0px !important;
+}
+
+* {
+  font-family: 'Poppins', sans-serif;
+  font-size: small;
+}
+
+.wrapper {
+  padding-right: 10px;
+}
+
+.title {
+  font-size: 1.8rem;
+  font-weight: 600;
+  margin-bottom: 0.5rem;
+}
+
+.subtitle {
+  font-size: 1rem;
+  color: var(--gray);
+  font-family: 'Poppins', sans-serif;
+  margin-bottom: 1.5rem;
+}
+
+.table-data .p-datatable-thead>tr>th {
+  background-color: var(--green-light);
+  font-weight: 600;
+  color: black;
+  padding: 0.9rem;
+}
+
+.table-data .p-datatable-tbody>tr>td {
+  padding: 0.9rem;
+}
+
+.filters {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 10px;
+  flex-wrap: wrap;
+}
+
+.filter-date {
+  min-width: 100px !important;
+}
+
+.filter-dropdown {
+  min-width: 220px;
+  background-color: transparent !important;
+}
+
+
+/* Greške */
+.p-error {
+  color: #d32f2f;
+  font-size: 0.85rem;
+  margin-top: 0.25rem;
+}
+
+.p-invalid {
+  border: 1px solid #d32f2f !important;
+  background-color: #ffebee !important;
+}

@@ -1,0 +1,4 @@
+<app-sidebar *ngIf="showLayout()"></app-sidebar>
+<div class="main-content" [style.marginLeft.px]="marginLeft()">
+  <router-outlet></router-outlet>
+</div>

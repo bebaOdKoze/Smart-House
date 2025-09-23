@@ -1,0 +1,69 @@
+.dashboard-wrapper {
+  padding: 2rem;
+}
+
+.dashboard-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 1rem;
+  margin-bottom: 2rem;
+}
+
+.dashboard-card {
+  text-align: center;
+  padding: 1rem;
+  border-radius: 8px;
+  color: white;
+}
+
+.dashboard-card.green {
+  background-color: green;
+}
+
+.dashboard-card.blue {
+  background-color: blue;
+}
+
+.dashboard-card.orange {
+  background-color: orange;
+}
+
+.dashboard-card.red {
+  background-color: red;
+}
+
+.card-value {
+  font-size: 2rem;
+  font-weight: bold;
+  margin: 0.5rem 0;
+}
+
+.card-label {
+  font-size: 0.9rem;
+  opacity: 0.8;
+}
+
+.logs-title {
+  font-size: 1.2rem;
+  margin-bottom: 1rem;
+}
+
+.logs-table ::ng-deep .p-datatable-thead > tr > th {
+  background-color: #eee;
+  font-weight: 600;
+}
+
+.status-success {
+  color: #4caf50;
+  font-weight: bold;
+}
+
+.status-warning {
+  color: #ff9800;
+  font-weight: bold;
+}
+
+.status-error {
+  color: #f44336;
+  font-weight: bold;
+}

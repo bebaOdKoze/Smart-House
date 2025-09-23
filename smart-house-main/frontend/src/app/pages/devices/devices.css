@@ -1,0 +1,21 @@
+
+td {
+  padding: 5px 15px !important;
+  margin: 0px !important;
+}
+
+.action-btn {
+  margin: 0px 2px;
+}
+
+.status-on,
+.status-open {
+  color: green;
+  font-weight: bold;
+}
+
+.status-off,
+.status-closed {
+  color: red;
+  font-weight: bold;
+}

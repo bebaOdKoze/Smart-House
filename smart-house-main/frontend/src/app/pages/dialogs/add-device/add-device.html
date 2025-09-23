@@ -1,0 +1,42 @@
+<form class="p-fluid grid gap-4 w-full">
+    <p-iftalabel>
+        <input id="name" type="text" class="w-full" pInputText [(ngModel)]="device.name" name="name" />
+        <label for="name">Device name</label>
+    </p-iftalabel>
+
+    <p-iftalabel>
+        <input id="type" type="text" class="w-full" pInputText [(ngModel)]="device.type" name="type" />
+        <label for="type">Type</label>
+    </p-iftalabel>
+
+    <p-iftalabel>
+        <input id="location" type="text" class="w-full" pInputText [(ngModel)]="device.location" name="location" />
+        <label for="location">Location</label>
+    </p-iftalabel>
+
+    <p-iftalabel>
+        <input id="ip" type="text" class="w-full" pInputText [(ngModel)]="device.ip" name="ip" />
+        <label for="ip">IP Address</label>
+    </p-iftalabel>
+
+    <p-iftalabel>
+        <input id="vendor" type="text" class="w-full" pInputText [(ngModel)]="device.vendor" name="vendor" />
+        <label for="vendor">Vendor</label>
+    </p-iftalabel>
+
+    <p-iftalabel>
+        <input id="battery" type="number" class="w-full" pInputText [(ngModel)]="device.battery" name="battery" />
+        <label for="battery">Battery (%)</label>
+    </p-iftalabel>
+
+    <p-iftalabel>
+        <input id="powerUsage" type="number" class="w-full" pInputText [(ngModel)]="device.powerUsage"
+            name="powerUsage" />
+        <label for="powerUsage">Power Usage (W)</label>
+    </p-iftalabel>
+</form>
+
+<p-footer class="flex justify-center gap-2 mt-3">
+    <p-button label="Cancel" icon="pi pi-times" (onClick)="ref.close()" severity="secondary"></p-button>
+    <p-button label="Save" icon="pi pi-check" (onClick)="save()" severity="success"></p-button>
+</p-footer>

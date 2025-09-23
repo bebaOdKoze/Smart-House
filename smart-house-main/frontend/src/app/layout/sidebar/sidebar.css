@@ -1,0 +1,97 @@
+.sidenav {
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 200px;
+    background: #f2f6f9;
+    border-right: 1px solid #ccc;
+    transition: width 0.3s ease;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    padding-top: 100px;
+    padding-left: 10px;
+    padding-right: 25px;
+}
+a > span{
+    font-size: small;
+    display: block;
+    text-align: center;
+    justify-content: center;
+}
+
+.header h3 {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0 10px; 
+}
+
+.sidenav.collapsed {
+    width: 65px;
+    padding-right: 20px;
+    text-align: center;
+}
+.nav-btn:hover {
+    background-color: #e0e0e0;  
+}
+
+.toggle-button {
+    position: fixed;
+    top: 300px;
+    left: 185px;
+    width: 25px;
+    height: 25px;
+    border: 1px solid gray;
+    border-radius: 50%;
+    background: white;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: left 0.3s ease, transform 0.3s ease;
+    z-index: 1000;
+}
+
+.sidenav.collapsed+.toggle-button {
+    left: 50px;
+}
+
+.toggle-button.is-flipped {
+    transform: rotate(180deg);
+}
+
+ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    width: 100% !important;
+}
+
+li {
+    margin: 8px 0px;
+}
+
+.nav-btn {
+    width: 100%;
+    padding: 10px;
+    border-radius: 5px;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+li > a {
+    text-decoration: none;
+    color: black;
+}
+
+.active-link {
+    background-color: var(--green-light) !important;
+    font-weight: bold;
+}
+
+h3 > span, h3 > i{
+  font-size: larger !important;
+}

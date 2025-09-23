@@ -1,0 +1,90 @@
+<div class="wrapper">
+    <p-toast />
+    <p-confirmdialog />
+    <h2 class="title">Smart Devices</h2>
+    <p class="subtitle">
+        Manage and monitor all connected devices in your smart home. Filter by type, status, or location — and take
+        control instantly.
+    </p>
+
+    <div class="filters">
+        <p-floatlabel variant="in">
+            <p-select [(ngModel)]="selectedType" inputId="filter_type" [options]="types"
+                class="w-full h-full filter-dropdown" variant="filled">
+            </p-select>
+            <label for="filter_type">Filter by type of device</label>
+        </p-floatlabel>
+
+        <p-floatlabel variant="in">
+            <p-select [(ngModel)]="selectedStatus" inputId="filter_status" [options]="statuses"
+                class="w-full h-full filter-dropdown" variant="filled">
+            </p-select>
+            <label for="filter_status">Filter by status of device</label>
+        </p-floatlabel>
+
+        <p-floatlabel variant="in">
+            <p-select [(ngModel)]="selectedLocation" inputId="filter_location" [options]="locations"
+                class="w-full h-full filter-dropdown" variant="filled">
+            </p-select>
+            <label for="filter_location">Filter by type of location</label>
+        </p-floatlabel>
+
+        <div class="ml-auto">
+            <p-button class="h-full" [raised]="true" severity="info" icon="pi pi-plus" type="button" label="Add new"
+                (click)="openAddDeviceDialog()">
+            </p-button>
+        </div>
+    </div>
+    <p-table [value]="filteredDevices" responsiveLayout="scroll" class="table-data">
+        <ng-template pTemplate="header">
+            <tr>
+                <th>Name</th>
+                <th>Type</th>
+                <th>Status</th>
+                <th>Location</th>
+                <th>IP Address</th>
+                <th>Battery</th>
+                <th>Power Usage</th>
+                <th>Vendor</th>
+                <th>Last Active</th>
+                <th>Actions</th>
+            </tr>
+        </ng-template>
+
+        <ng-template pTemplate="body" let-device>
+            <tr>
+                <td><i [ngClass]="device.icon" class="mr-2"></i> {{ device.name }}</td>
+                <td>{{ device.type }}</td>
+                <td>
+                    <span [ngClass]="{
+            'status-on': device.status === 'On',
+            'status-off': device.status === 'Off',
+            'status-closed': device.status === 'Closed',
+            'status-opened': device.status === 'Opened'
+          }">{{ device.status }}</span>
+                </td>
+                <td>{{ device.location }}</td>
+                <td>{{ device.ip }}</td>
+                <td>
+                    <span *ngIf="device.battery !== null">🔋 {{ device.battery }}%</span>
+                    <span *ngIf="device.battery === null">N/A</span>
+                </td>
+                <td>
+                    <span *ngIf="device.powerUsage !== null">⚡ {{ device.powerUsage }} W</span>
+                    <span *ngIf="device.powerUsage === null">N/A</span>
+                </td>
+                <td>{{ device.vendor || 'Unknown' }}</td>
+                <td>{{ device.lastActive || '—' }}</td>
+                <td class="flex gap-2 justify-center">
+                    <p-button icon="pi pi-power-off" [raised]="true" class="action-btn"
+                        [severity]="toggleDeviceSeverity(device)" (click)="toggleDeviceStatus(device)">
+                    </p-button>
+                    <p-button icon="pi pi-pencil" [raised]="true" (click)="editDevice(device)" class="action-btn"
+                        severity="info"></p-button>
+                    <p-button icon="pi pi-trash" [raised]="true" class="action-btn" severity="secondary"
+                        (click)="deleteDevice($event, device._id, device.name)"></p-button>
+                </td>
+            </tr>
+        </ng-template>
+    </p-table>
+</div>

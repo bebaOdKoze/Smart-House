@@ -1,0 +1,72 @@
+[
+  {
+    "time": "2025-09-16T21:00:00.000Z",
+    "device": null,
+    "message": "Temperature set to 22°C",
+    "type": "Thermostat",
+    "severity": "Info"
+  },
+  {
+    "time": "2025-09-16T20:45:00.000Z",
+    "device": null,
+    "message": "Door locked",
+    "type": "Lock",
+    "severity": "Info"
+  },
+  {
+    "time": "2025-09-16T20:30:00.000Z",
+    "device": null,
+    "message": "Motion detected",
+    "type": "Sensor",
+    "severity": "Warning"
+  },
+  {
+    "time": "2025-09-16T20:15:00.000Z",
+    "device": null,
+    "message": "Power surge detected",
+    "type": "Outlet",
+    "severity": "Critical"
+  },
+  {
+    "time": "2025-09-16T20:00:00.000Z",
+    "device": null,
+    "message": "Light turned off",
+    "type": "Light",
+    "severity": "Info"
+  },
+  {
+    "time": "2025-09-16T19:45:00.000Z",
+    "device": null,
+    "message": "Humidity level: 60%",
+    "type": "Sensor",
+    "severity": "Info"
+  },
+  {
+    "time": "2025-09-16T19:30:00.000Z",
+    "device": null,
+    "message": "Voice command received",
+    "type": "Speaker",
+    "severity": "Info"
+  },
+  {
+    "time": "2025-09-16T19:15:00.000Z",
+    "device": null,
+    "message": "Fan turned off",
+    "type": "Fan",
+    "severity": "Info"
+  },
+  {
+    "time": "2025-09-16T19:00:00.000Z",
+    "device": null,
+    "message": "Window closed",
+    "type": "Sensor",
+    "severity": "Info"
+  },
+  {
+    "time": "2025-09-16T18:45:00.000Z",
+    "device": null,
+    "message": "TV turned on",
+    "type": "TV",
+    "severity": "Info"
+  }
+]

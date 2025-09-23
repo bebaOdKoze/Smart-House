@@ -1,0 +1,122 @@
+[
+  {
+    "name": "Night Light",
+    "type": "Comfort",
+    "condition": "Motion detected after 22:00",
+    "action": "Turn on hallway light",
+    "targetDevice": null,
+    "status": "Active",
+    "priority": "Medium",
+    "lastTriggered": "2025-09-16T22:00:00.000Z",
+    "createdBy": "Jefimija",
+    "icon": "pi pi-moon"
+  },
+  {
+    "name": "Security Alert",
+    "type": "Security",
+    "condition": "Door opened while away",
+    "action": "Send alert + activate camera",
+    "targetDevice": null,
+    "status": "Error",
+    "priority": "High",
+    "lastTriggered": "2025-09-16T03:12:00.000Z",
+    "createdBy": "Admin",
+    "icon": "pi pi-shield"
+  },
+  {
+    "name": "Climate Control",
+    "type": "Energy",
+    "condition": "Temperature > 28°C",
+    "action": "Turn on AC",
+    "targetDevice": null,
+    "status": "Active",
+    "priority": "Medium",
+    "lastTriggered": "2025-09-16T14:10:00.000Z",
+    "createdBy": "System",
+    "icon": "pi pi-sliders-h"
+  },
+  {
+    "name": "Morning Routine",
+    "type": "Comfort",
+    "condition": "Time is 07:00",
+    "action": "Turn on kitchen light + play music",
+    "targetDevice": null,
+    "status": "Active",
+    "priority": "Low",
+    "lastTriggered": "2025-09-16T07:00:00.000Z",
+    "createdBy": "Jefimija",
+    "icon": "pi pi-clock"
+  },
+  {
+    "name": "Humidity Alert",
+    "type": "Environment",
+    "condition": "Humidity > 70%",
+    "action": "Activate bathroom fan",
+    "targetDevice": null,
+    "status": "Active",
+    "priority": "Medium",
+    "lastTriggered": "2025-09-16T18:30:00.000Z",
+    "createdBy": "System",
+    "icon": "pi pi-refresh"
+  },
+  {
+    "name": "Window Security",
+    "type": "Security",
+    "condition": "Window opened after 23:00",
+    "action": "Send alert",
+    "targetDevice": null,
+    "status": "Active",
+    "priority": "High",
+    "lastTriggered": "2025-09-16T23:15:00.000Z",
+    "createdBy": "Admin",
+    "icon": "pi pi-window-maximize"
+  },
+  {
+    "name": "Energy Saver",
+    "type": "Energy",
+    "condition": "No motion for 30 minutes",
+    "action": "Turn off unused devices",
+    "targetDevice": null,
+    "status": "Active",
+    "priority": "Medium",
+    "lastTriggered": "2025-09-16T16:00:00.000Z",
+    "createdBy": "System",
+    "icon": "pi pi-power-off"
+  },
+  {
+    "name": "TV Timer",
+    "type": "Comfort",
+    "condition": "Time is 23:00",
+    "action": "Turn off TV",
+    "targetDevice": null,
+    "status": "Active",
+    "priority": "Low",
+    "lastTriggered": "2025-09-16T23:00:00.000Z",
+    "createdBy": "Jefimija",
+    "icon": "pi pi-desktop"
+  },
+  {
+    "name": "Speaker Mute",
+    "type": "Comfort",
+    "condition": "Incoming call detected",
+    "action": "Mute smart speaker",
+    "targetDevice": null,
+    "status": "Active",
+    "priority": "Medium",
+    "lastTriggered": "2025-09-16T17:45:00.000Z",
+    "createdBy": "System",
+    "icon": "pi pi-volume-off"
+  },
+  {
+    "name": "Garage Alert",
+    "type": "Security",
+    "condition": "Motion detected in garage",
+    "action": "Send alert + turn on camera",
+    "targetDevice": null,
+    "status": "Active",
+    "priority": "High",
+    "lastTriggered": "2025-09-16T20:30:00.000Z",
+    "createdBy": "Admin",
+    "icon": "pi pi-video"
+  }
+]

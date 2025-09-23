@@ -1,0 +1,41 @@
+<div class="sidenav" [class.collapsed]="!sidenavService.isExpanded()">
+  <div class="header">
+    <h3 [ngClass]="{ 'collapsed': !sidenavService.isExpanded() }">
+      <i class="pi pi-spin pi-cog"></i>
+      <span *ngIf="sidenavService.isExpanded()">Smart House</span>
+    </h3>
+  </div>
+
+  <ul>
+    <li>
+      <a routerLink="/dashboard" class="nav-btn" routerLinkActive="active-link"
+        [routerLinkActiveOptions]="{ exact: true }">
+        <i class="pi pi-chart-bar"></i>
+        <span *ngIf="sidenavService.isExpanded()"> Dashboard</span>
+      </a>
+    </li>
+    <li>
+      <a routerLink="/devices" class="nav-btn" routerLinkActive="active-link">
+        <i class="pi pi-desktop"></i>
+        <span *ngIf="sidenavService.isExpanded()"> Devices </span>
+      </a>
+    </li>
+    <li>
+      <a routerLink="/rules" class="nav-btn" routerLinkActive="active-link">
+        <i class="pi pi-list"></i>
+        <span *ngIf="sidenavService.isExpanded()"> Rules </span>
+      </a>
+    </li>
+    <li>
+      <a routerLink="/logs" class="nav-btn" routerLinkActive="active-link">
+        <i class="pi pi-file"></i>
+        <span *ngIf="sidenavService.isExpanded()"> Logs </span>
+      </a>
+    </li>
+  </ul>
+</div>
+
+<button class="toggle-button" (click)="sidenavService.toggleSidenav()"
+  [class.is-flipped]="!sidenavService.isExpanded()">
+  <i class="pi pi-chevron-right"></i>
+</button>
