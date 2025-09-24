@@ -9,7 +9,7 @@ td {
 }
 
 .status-on,
-.status-open {
+.status-opened {
   color: green;
   font-weight: bold;
 }

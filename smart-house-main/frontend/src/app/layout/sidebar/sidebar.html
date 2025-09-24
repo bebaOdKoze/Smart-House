@@ -32,6 +32,12 @@
         <span *ngIf="sidenavService.isExpanded()"> Logs </span>
       </a>
     </li>
+    <li>
+      <a routerLink="" class="nav-btn" routerLinkActive="active-link">
+        <p-button label="Logout" (onclick)="logout()"/>
+        <span *ngIf="sidenavService.isExpanded()"> </span>
+      </a>
+    </li>
   </ul>
 </div>
 

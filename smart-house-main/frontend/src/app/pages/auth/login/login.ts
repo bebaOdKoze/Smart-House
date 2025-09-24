@@ -9,6 +9,7 @@ import { CardModule } from 'primeng/card';
 import { Toast } from 'primeng/toast';
 import { MessageService } from 'primeng/api';
 import { AuthService } from '../../../core/services/auth/auth';
+import { CookieService } from 'ngx-cookie-service';
 
 @Component({
   selector: 'app-login',
@@ -26,7 +27,8 @@ export class LoginComponent {
   loginForm!: FormGroup;
 
   constructor(private fb: FormBuilder, private router: Router,
-    private authService: AuthService, private messageService: MessageService
+    private authService: AuthService, private messageService: MessageService,
+    private cookie: CookieService
   ) { }
 
   ngOnInit(): void {
@@ -57,13 +59,14 @@ export class LoginComponent {
     const { username, password } = this.loginForm.value;
 
     this.authService.login(username, password).subscribe({
-      next: () => {
+      next: (res) => {
         this.messageService.add({
           severity: 'success',
           summary: 'Uspešan login',
           detail: `Dobrodošla, ${username}`,
           life: 3000
         });
+        //this.cookie.set("token", res.token);
         this.router.navigate(['/dashboard']);
       },
       error: (err) => {

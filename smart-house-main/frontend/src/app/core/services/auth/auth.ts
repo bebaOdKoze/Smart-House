@@ -1,6 +1,6 @@
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Injectable, signal } from '@angular/core';
-import { tap } from 'rxjs';
+import { catchError, map, Observable, of, tap } from 'rxjs';
 import { environment } from '../../../../environment/environment';
 
 @Injectable({
@@ -35,5 +35,11 @@ export class AuthService {
   isAuthenticated(): boolean {
     return !!this.getToken();
   }
+
+  validationJwt(token: string):Observable<boolean>{
+    let headers = new HttpHeaders().set("Authorization", "Bearer "+token);
+    return this.http.post<boolean>(environment.apiUrl+"auth/validate",{},{headers:headers});
+  }
+
 
 }
