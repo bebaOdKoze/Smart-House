@@ -11,18 +11,21 @@ export class AuthGuard implements CanActivate {
   constructor(private cookie: CookieService, 
               private authService: AuthService,
               private router: Router){}
-  canActivate(
-    route: ActivatedRouteSnapshot,
-    state: RouterStateSnapshot): Observable<boolean | UrlTree> | Promise<boolean | UrlTree> | boolean | UrlTree {
-    
-    const token = this.authService.getToken();
-    if (token) {
-      console.log('Token iz localStorage:', token);
-      return true;
-    } else {
-      console.log('Token ne postoji');
-      return false;
-    }
+ canActivate(
+  route: ActivatedRouteSnapshot,
+  state: RouterStateSnapshot
+): boolean | UrlTree {
+  
+  const token = this.authService.getToken();
+
+  if (token) {
+    console.log('Token iz storage:', token);
+    return true;
+  } else {
+    console.log('Token ne postoji');
+    return this.router.createUrlTree(['/login']);
   }
+}
+
   
 }
